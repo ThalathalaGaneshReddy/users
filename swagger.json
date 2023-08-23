@@ -1,0 +1,60 @@
+
+{
+    "openapi":"3.0.0",
+    "info":{
+        "description":"This is for api testing",
+        "version":"__version__"
+    },
+    "tags":[{
+        "name":"USER",
+        "description":"user"
+    }],
+    "paths":{
+        "/getUsers":{
+            "summary":"get all the users",
+            "get":{
+                "description":"get users",
+                "tags":["USER"],
+                "responses":{
+                    "200":{
+                        "description":"all users"
+                    },
+                    "400":{
+                        "description":"error while getting users"
+                    }
+                }
+            }
+        },
+        "/addUser":{
+            "summary":"add user",
+            "post":{
+                "description":"add user",
+                "tags":["USER"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "name":"ganeshswagger",
+                                "email":"ganesh@swagger.com",
+                                "phone":897987889 
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"user added"
+                    },
+                    "400":{
+                        "description":"error while adding user"
+                    }
+                }
+            }
+        }
+    }
+}
