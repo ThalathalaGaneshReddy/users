@@ -9,5 +9,5 @@ const userSchema = new mongoose.Schema({
     phone:Number
 })
 
-mongoose.model("Users",userSchema)
-module.exports = mongoose.model("Users")
+mongoose.model("users",userSchema)
+module.exports = mongoose.model("users")

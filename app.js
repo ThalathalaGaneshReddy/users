@@ -65,6 +65,7 @@ app.get("/updateUser",async (req,res)=>{
     let updatedUser = await User.findByIdAndUpdate({_id:id},{ 
         email:req.body.email 
     })
+    //updating in mongoose also
     updatedUser.email = req.body.email
     res.send(updatedUser)
 })
